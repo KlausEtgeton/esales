@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 18/08/2015 19:49:14 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.minhafazenda.model.Vacina" table="vacina" catalog="fazenda" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="descricao" type="string">
+            <column name="descricao" length="45" />
+        </property>
+        <property name="modoUso" type="string">
+            <column name="modo_uso" length="65535" />
+        </property>
+        <property name="indicacoes" type="string">
+            <column name="indicacoes" length="65535" />
+        </property>
+        <property name="vacinacol" type="string">
+            <column name="vacinacol" length="45" />
+        </property>
+        <property name="diasValidade" type="java.lang.Integer">
+            <column name="dias_validade" />
+        </property>
+        <set name="vacinaAnimals" table="vacina_animal" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_vacina" not-null="true" />
+            </key>
+            <one-to-many class="com.minhafazenda.model.VacinaAnimal" />
+        </set>
+    </class>
+</hibernate-mapping>
