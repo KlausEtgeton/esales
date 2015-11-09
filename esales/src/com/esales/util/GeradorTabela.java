@@ -5,7 +5,7 @@
  */
 package com.esales.util;
 
-import com.esales.model.Categoria;
+//import com.esales.model.Categoria;
 import org.hibernate.cfg.AnnotationConfiguration;
 import org.hibernate.tool.hbm2ddl.SchemaExport;
 
@@ -17,7 +17,7 @@ public class GeradorTabela {
     
     public static void main(String[] args){
         AnnotationConfiguration configuracao = new AnnotationConfiguration();
-        configuracao.addAnnotatedClass(Categoria.class);
+//        configuracao.addAnnotatedClass(Categoria.class);
         
         SchemaExport export = new SchemaExport(configuracao);
         export.create(true, false);

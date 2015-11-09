@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+<hibernate-reverse-engineering>
+  <schema-selection match-catalog="esales"/>
+  <table-filter match-name="system_group_program"/>
+  <table-filter match-name="filial"/>
+  <table-filter match-name="entrada"/>
+  <table-filter match-name="log"/>
+  <table-filter match-name="system_user_group"/>
+  <table-filter match-name="produto"/>
+  <table-filter match-name="system_user_program"/>
+  <table-filter match-name="marca"/>
+  <table-filter match-name="system_program"/>
+  <table-filter match-name="pessoa"/>
+  <table-filter match-name="saida"/>
+  <table-filter match-name="caixa"/>
+  <table-filter match-name="compra"/>
+  <table-filter match-name="system_group"/>
+  <table-filter match-name="system_user"/>
+  <table-filter match-name="venda_item"/>
+  <table-filter match-name="produto_filial"/>
+  <table-filter match-name="venda"/>
+  <table-filter match-name="cidade"/>
+  <table-filter match-name="pessoa_juridica"/>
+  <table-filter match-name="pessoa_fisica"/>
+  <table-filter match-name="compra_item"/>
+</hibernate-reverse-engineering>

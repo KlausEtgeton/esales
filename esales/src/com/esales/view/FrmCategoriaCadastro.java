@@ -5,8 +5,8 @@
  */
 package com.esales.view;
 
-import com.esales.controller.CategoriaController;
-import com.esales.model.Categoria;
+//import com.esales.controller.CategoriaController;
+//import com.esales.model.Categoria;
 
 /**
  *
@@ -14,9 +14,9 @@ import com.esales.model.Categoria;
  */
 public class FrmCategoriaCadastro extends javax.swing.JDialog {
     
-    private final CategoriaController objController;
-    private Categoria objCategoria;
-    private boolean edicao;
+//    private final CategoriaController objController;
+//    private Categoria objCategoria;
+//    private boolean edicao;
     
     /**
      * Creates new form FrmCategoriaCadastro
@@ -24,33 +24,33 @@ public class FrmCategoriaCadastro extends javax.swing.JDialog {
     public FrmCategoriaCadastro() {   
         initComponents();
         //Cria o objeto de controller
-        this.objController = new CategoriaController();
+//        this.objController = new CategoriaController();
     }
     
     public void fNovoRegistro(){
         //
-        this.objCategoria = new Categoria();
-        //Por padrão oculta o botão excluir
-        btnExcluir.setEnabled(false);
-        //POr padrão limpa o campo texto
-        txtDescricao.setText("");
-        //Adiciona o status de edição
-        this.edicao = false;
-        //Seta o focu no campo de descrição ao abrir o formulário
-        txtDescricao.requestFocus();
+//        this.objCategoria = new Categoria();
+//        //Por padrão oculta o botão excluir
+//        btnExcluir.setEnabled(false);
+//        //POr padrão limpa o campo texto
+//        txtDescricao.setText("");
+//        //Adiciona o status de edição
+//        this.edicao = false;
+//        //Seta o focu no campo de descrição ao abrir o formulário
+//        txtDescricao.requestFocus();
     }
     
     public void fCarregaCadastro(int id){
-        //Se for passado um código por parâmetro, pesquisa no banco
-        this.objCategoria = this.objController.findById(id);
-        //Carrega na tela a descrição da categoria
-        txtDescricao.setText(this.objCategoria.getDescricao());
-        //Adiciona o status de edição
-        this.edicao = true;    
-        //MOstra o botão excluir
-        btnExcluir.setEnabled(true);
-        //Seta o focu no campo de descrição ao abrir o formulário
-        txtDescricao.requestFocus();
+//        //Se for passado um código por parâmetro, pesquisa no banco
+//        this.objCategoria = this.objController.findById(id);
+//        //Carrega na tela a descrição da categoria
+//        txtDescricao.setText(this.objCategoria.getDescricao());
+//        //Adiciona o status de edição
+//        this.edicao = true;    
+//        //MOstra o botão excluir
+//        btnExcluir.setEnabled(true);
+//        //Seta o focu no campo de descrição ao abrir o formulário
+//        txtDescricao.requestFocus();
     }
 
     /**
@@ -167,25 +167,25 @@ public class FrmCategoriaCadastro extends javax.swing.JDialog {
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
         //Adiciona os atributos
-        objCategoria.setDescricao(txtDescricao.getText());
-        //Verifica se deve adicionar ou atualizar um registro
-        if(this.edicao){
-            //Chama o méotod INSERT do conttroler
-            if(objController.update(objCategoria)){
-                //Limpa o campo de descrição da Categoria
-                txtDescricao.setText("");
-                //Fecha o formulário
-                this.setVisible(false);
-            }
-        }else{
-            //Chama o méotod INSERT do conttroler
-            if(objController.insert(objCategoria)){
-                //Limpa o campo de descrição da Categoria
-                txtDescricao.setText("");
-                //Fecha o formulário
-                this.setVisible(false);
-            }
-        }
+//        objCategoria.setDescricao(txtDescricao.getText());
+//        //Verifica se deve adicionar ou atualizar um registro
+//        if(this.edicao){
+//            //Chama o méotod INSERT do conttroler
+//            if(objController.update(objCategoria)){
+//                //Limpa o campo de descrição da Categoria
+//                txtDescricao.setText("");
+//                //Fecha o formulário
+//                this.setVisible(false);
+//            }
+//        }else{
+//            //Chama o méotod INSERT do conttroler
+//            if(objController.insert(objCategoria)){
+//                //Limpa o campo de descrição da Categoria
+//                txtDescricao.setText("");
+//                //Fecha o formulário
+//                this.setVisible(false);
+//            }
+//        }
     }//GEN-LAST:event_btnSalvarActionPerformed
 
     private void btnFecharActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFecharActionPerformed
@@ -193,7 +193,7 @@ public class FrmCategoriaCadastro extends javax.swing.JDialog {
     }//GEN-LAST:event_btnFecharActionPerformed
 
     private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
-        objController.delete(objCategoria);
+//        objController.delete(objCategoria);
         //Fecha o formulário
         this.setVisible(false);
     }//GEN-LAST:event_btnExcluirActionPerformed

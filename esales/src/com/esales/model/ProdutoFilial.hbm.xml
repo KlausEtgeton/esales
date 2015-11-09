@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 9, 2015 8:59:31 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.esales.model.ProdutoFilial" table="produto_filial" catalog="esales" optimistic-lock="version">
+        <composite-id name="id" class="com.esales.model.ProdutoFilialId">
+            <key-property name="id" type="int">
+                <column name="id" />
+            </key-property>
+            <key-property name="produtoId" type="int">
+                <column name="produto_id" />
+            </key-property>
+            <key-property name="filialId" type="int">
+                <column name="filial_id" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="filial" class="com.esales.model.Filial" update="false" insert="false" fetch="select">
+            <column name="filial_id" not-null="true" />
+        </many-to-one>
+        <many-to-one name="produto" class="com.esales.model.Produto" update="false" insert="false" fetch="select">
+            <column name="produto_id" not-null="true" />
+        </many-to-one>
+        <property name="quantidade" type="string">
+            <column name="quantidade" length="45" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 9, 2015 8:59:31 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.esales.model.Pessoa" table="pessoa" catalog="esales" optimistic-lock="version">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="cidade" class="com.esales.model.Cidade" fetch="select">
+            <column name="cidade_id" not-null="true" />
+        </many-to-one>
+        <property name="nome" type="string">
+            <column name="nome" length="45" />
+        </property>
+        <property name="telefone" type="string">
+            <column name="telefone" length="45" />
+        </property>
+        <property name="email" type="string">
+            <column name="email" length="45" />
+        </property>
+        <property name="endereco" type="string">
+            <column name="endereco" length="45" />
+        </property>
+        <property name="numero" type="string">
+            <column name="numero" length="45" />
+        </property>
+        <property name="cep" type="string">
+            <column name="cep" length="45" />
+        </property>
+        <set name="vendasForVendedorId" table="venda" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="vendedor_id" not-null="true" />
+            </key>
+            <one-to-many class="com.esales.model.Venda" />
+        </set>
+        <set name="vendasForCompradorId" table="venda" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="comprador_id" not-null="true" />
+            </key>
+            <one-to-many class="com.esales.model.Venda" />
+        </set>
+        <one-to-one name="pessoaJuridica" class="com.esales.model.PessoaJuridica"></one-to-one>
+        <set name="caixas" table="caixa" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="pessoa_id" not-null="true" />
+            </key>
+            <one-to-many class="com.esales.model.Caixa" />
+        </set>
+        <set name="comprasForVendedorId" table="compra" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="vendedor_id" not-null="true" />
+            </key>
+            <one-to-many class="com.esales.model.Compra" />
+        </set>
+        <set name="comprasForClienteId" table="compra" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="cliente_id" not-null="true" />
+            </key>
+            <one-to-many class="com.esales.model.Compra" />
+        </set>
+        <one-to-one name="pessoaFisica" class="com.esales.model.PessoaFisica"></one-to-one>
+    </class>
+</hibernate-mapping>

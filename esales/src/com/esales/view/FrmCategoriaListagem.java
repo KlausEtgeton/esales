@@ -5,7 +5,7 @@
  */
 package com.esales.view;
 
-import com.esales.controller.CategoriaController;
+//import com.esales.controller.CategoriaController;
 import com.esales.util.ForcedListSelectionModel;
 import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
@@ -19,38 +19,38 @@ import javax.swing.table.TableColumnModel;
 public class FrmCategoriaListagem extends javax.swing.JInternalFrame {
 
     private FrmCategoriaCadastro frm;
-    private final CategoriaController objController;
+//    private final CategoriaController objController;
 
     /**
      * Creates new form FrmCategoriaListagem
      */
     public FrmCategoriaListagem() {
-        //
-        initComponents();
-        //Define o título para a janela
-        this.setTitle("SGF - Relação de Categorias");
-        //Inicia o objeto de controller
-        objController = new CategoriaController();
-        //Carrega a lista de categorias no controller
-        objController.findByAll();
-        //Seta o controller no JTABLE
-        jTableCategoria.setModel(objController);
-        //
-        jTableCategoria.setFillsViewportHeight(true);
-        
-        //LIbera a seleção das linhas da jTAble
-        jTableCategoria.setRowSelectionAllowed(true);
-        //Aceita somente uma linha selecionada por vez
-        jTableCategoria.setSelectionModel(new ForcedListSelectionModel());
-        
-        //Configuração da Jtable
-        TableColumnModel objColumn = jTableCategoria.getColumnModel();
-        objColumn.getColumn(0).setMaxWidth(100);        
+//        //
+//        initComponents();
+//        //Define o título para a janela
+//        this.setTitle("SGF - Relação de Categorias");
+//        //Inicia o objeto de controller
+//        objController = new CategoriaController();
+//        //Carrega a lista de categorias no controller
+//        objController.findByAll();
+//        //Seta o controller no JTABLE
+//        jTableCategoria.setModel(objController);
+//        //
+//        jTableCategoria.setFillsViewportHeight(true);
+//        
+//        //LIbera a seleção das linhas da jTAble
+//        jTableCategoria.setRowSelectionAllowed(true);
+//        //Aceita somente uma linha selecionada por vez
+//        jTableCategoria.setSelectionModel(new ForcedListSelectionModel());
+//        
+//        //Configuração da Jtable
+//        TableColumnModel objColumn = jTableCategoria.getColumnModel();
+//        objColumn.getColumn(0).setMaxWidth(100);        
     }
 
     public void pesquisar() {
         //Efetua a busca pela descricão no conttroler
-        objController.findByDescricao(txtBusca.getText());
+//        objController.findByDescricao(txtBusca.getText());
         //
         jTableCategoria.setFillsViewportHeight(true);
     }

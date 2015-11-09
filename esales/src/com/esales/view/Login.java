@@ -9,7 +9,7 @@ import java.awt.Toolkit;
 import java.awt.event.KeyEvent;
 import javax.swing.UIManager;
 import com.esales.controller.UsuarioController;
-import com.esales.model.Usuario;
+import com.esales.model.SystemUser;
 import javax.swing.JOptionPane;
 
 /**
@@ -19,7 +19,7 @@ import javax.swing.JOptionPane;
 public class Login extends javax.swing.JFrame {
 
     private UsuarioController objController;
-    private Usuario ObjUsuario;
+    private SystemUser ObjUsuario;
 
     /**
      * Creates new form Login
@@ -44,7 +44,7 @@ public class Login extends javax.swing.JFrame {
 
     public void pesquisar() {
         //Efetua a busca pela descricão no conttroler
-//       objController.findByUsuario(txtUsuario.getText(), new String(jPSenha.getPassword()));
+       objController.findByUsuario(txtUsuario.getText(), new String(jPSenha.getPassword()));
 
         if (objController.findByUsuario(txtUsuario.getText(), new String(jPSenha.getPassword())) != null) {
             // abrir tela da aplicação

@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 9, 2015 8:59:31 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.esales.model.Compra" table="compra" catalog="esales" optimistic-lock="version">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="filial" class="com.esales.model.Filial" fetch="select">
+            <column name="filial_id" not-null="true" />
+        </many-to-one>
+        <many-to-one name="pessoaByVendedorId" class="com.esales.model.Pessoa" fetch="select">
+            <column name="vendedor_id" not-null="true" />
+        </many-to-one>
+        <many-to-one name="pessoaByClienteId" class="com.esales.model.Pessoa" fetch="select">
+            <column name="cliente_id" not-null="true" />
+        </many-to-one>
+        <many-to-one name="saida" class="com.esales.model.Saida" fetch="select">
+            <column name="saida_id" not-null="true" />
+        </many-to-one>
+        <property name="data" type="timestamp">
+            <column name="data" length="19" />
+        </property>
+        <set name="compraItems" table="compra_item" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="compra_id" not-null="true" />
+            </key>
+            <one-to-many class="com.esales.model.CompraItem" />
+        </set>
+    </class>
+</hibernate-mapping>

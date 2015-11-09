@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 9, 2015 8:59:31 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.esales.model.Produto" table="produto" catalog="esales" optimistic-lock="version">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="marca" class="com.esales.model.Marca" fetch="select">
+            <column name="marca_id" not-null="true" />
+        </many-to-one>
+        <property name="descricao" type="string">
+            <column name="descricao" length="45" />
+        </property>
+        <property name="precoCompra" type="string">
+            <column name="preco_compra" length="45" />
+        </property>
+        <property name="precoVenda" type="string">
+            <column name="preco_venda" length="45" />
+        </property>
+        <set name="vendaItems" table="venda_item" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="produto_id" not-null="true" />
+            </key>
+            <one-to-many class="com.esales.model.VendaItem" />
+        </set>
+        <set name="produtoFilials" table="produto_filial" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="produto_id" not-null="true" />
+            </key>
+            <one-to-many class="com.esales.model.ProdutoFilial" />
+        </set>
+        <set name="compraItems" table="compra_item" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="produto_id" not-null="true" />
+            </key>
+            <one-to-many class="com.esales.model.CompraItem" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -18,7 +18,7 @@ import javax.swing.UIManager;
 public class FrmPrincipal extends javax.swing.JFrame {
 
     private FrmCategoriaListagem frmCategoria;
-    private FrmRacaListagem frmRaca;
+//    private FrmRacaListagem frmRaca;
     private FrmUsuarioListagem frmUsuario;
 
 //    private Licenca objLicenca;
@@ -255,20 +255,20 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
     private void menuCadastroRacaActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_menuCadastroRacaActionPerformed
     {//GEN-HEADEREND:event_menuCadastroRacaActionPerformed
-        if (frmRaca == null) {
-            //Cria o form
-            frmRaca = new FrmRacaListagem();
-            //Adiciona o formulario dentro do DESKTOP
-            this.jDesktopPane1.add(frmRaca);
-            //diz que a janela interna é maximizável
-            frmRaca.setMaximizable(true);
-            //set o tamanho máximo dela, que depende da janela pai
-            //frmCategoria.setMaximum(true);
-        }
-        if (!frmRaca.isVisible()) {
-            //Mostra o formulário
-            frmRaca.setVisible(true);
-        }
+//        if (frmRaca == null) {
+//            //Cria o form
+//            frmRaca = new FrmRacaListagem();
+//            //Adiciona o formulario dentro do DESKTOP
+//            this.jDesktopPane1.add(frmRaca);
+//            //diz que a janela interna é maximizável
+//            frmRaca.setMaximizable(true);
+//            //set o tamanho máximo dela, que depende da janela pai
+//            //frmCategoria.setMaximum(true);
+//        }
+//        if (!frmRaca.isVisible()) {
+//            //Mostra o formulário
+//            frmRaca.setVisible(true);
+//        }
     }//GEN-LAST:event_menuCadastroRacaActionPerformed
 
     private void menuCadastroCategoriaActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_menuCadastroCategoriaActionPerformed
@@ -303,20 +303,20 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
     private void btnRacaActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnRacaActionPerformed
     {//GEN-HEADEREND:event_btnRacaActionPerformed
-        if (frmRaca == null) {
-            //Cria o form
-            frmRaca = new FrmRacaListagem();
-            //Adiciona o formulario dentro do DESKTOP
-            this.jDesktopPane1.add(frmRaca);
-            //diz que a janela interna é maximizável
-            frmRaca.setMaximizable(true);
-            //set o tamanho máximo dela, que depende da janela pai
-            //frmCategoria.setMaximum(true);
-        }
-        if (!frmRaca.isVisible()) {
-            //Mostra o formulário
-            frmRaca.setVisible(true);
-        }
+//        if (frmRaca == null) {
+//            //Cria o form
+//            frmRaca = new FrmRacaListagem();
+//            //Adiciona o formulario dentro do DESKTOP
+//            this.jDesktopPane1.add(frmRaca);
+//            //diz que a janela interna é maximizável
+//            frmRaca.setMaximizable(true);
+//            //set o tamanho máximo dela, que depende da janela pai
+//            //frmCategoria.setMaximum(true);
+//        }
+//        if (!frmRaca.isVisible()) {
+//            //Mostra o formulário
+//            frmRaca.setVisible(true);
+//        }
 
     }//GEN-LAST:event_btnRacaActionPerformed
 

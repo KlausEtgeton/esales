@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 9, 2015 8:59:31 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.esales.model.Caixa" table="caixa" catalog="esales" optimistic-lock="version">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="filial" class="com.esales.model.Filial" fetch="select">
+            <column name="filial_id" not-null="true" />
+        </many-to-one>
+        <many-to-one name="pessoa" class="com.esales.model.Pessoa" fetch="select">
+            <column name="pessoa_id" not-null="true" />
+        </many-to-one>
+        <property name="descricao" type="string">
+            <column name="descricao" length="45" />
+        </property>
+        <property name="saldoInicial" type="string">
+            <column name="saldo_inicial" length="45" />
+        </property>
+        <set name="saidas" table="saida" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="caixa_id" not-null="true" />
+            </key>
+            <one-to-many class="com.esales.model.Saida" />
+        </set>
+        <set name="entradas" table="entrada" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="caixa_id" not-null="true" />
+            </key>
+            <one-to-many class="com.esales.model.Entrada" />
+        </set>
+    </class>
+</hibernate-mapping>

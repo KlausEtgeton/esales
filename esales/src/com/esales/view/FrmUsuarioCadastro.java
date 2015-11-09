@@ -6,7 +6,7 @@
 package com.esales.view;
 
 import com.esales.controller.UsuarioController;
-import com.esales.model.Usuario;
+import com.esales.model.SystemUser;
 
 /**
  *
@@ -15,7 +15,7 @@ import com.esales.model.Usuario;
 public class FrmUsuarioCadastro extends javax.swing.JDialog {
     
     private final UsuarioController objController;
-    private Usuario objUsuario;
+    private SystemUser objUsuario;
     private boolean edicao;
     
     /**
@@ -29,7 +29,7 @@ public class FrmUsuarioCadastro extends javax.swing.JDialog {
     
     public void fNovoRegistro(){
         //
-        this.objUsuario = new Usuario();
+        this.objUsuario = new SystemUser();
         //Por padrão oculta o botão excluir
         btnExcluir.setEnabled(false);
         //POr padrão limpa o campo texto
@@ -44,7 +44,7 @@ public class FrmUsuarioCadastro extends javax.swing.JDialog {
         //Se for passado um código por parâmetro, pesquisa no banco
         this.objUsuario = this.objController.findById(id);
         //Carrega na tela a descrição da categoria
-        txtDescricao.setText(this.objUsuario.getUsuario());
+//        txtDescricao.setText(this.objUsuario.getUsuario());aqui
         //Adiciona o status de edição
         this.edicao = true;    
         //MOstra o botão excluir
@@ -183,7 +183,7 @@ public class FrmUsuarioCadastro extends javax.swing.JDialog {
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
         //Adiciona os atributos
-        objUsuario.setUsuario(txtDescricao.getText());
+//        objUsuario.setUsuario(txtDescricao.getText());aqui
         //Verifica se deve adicionar ou atualizar um registro
         if(this.edicao){
             //Chama o méotod INSERT do conttroler

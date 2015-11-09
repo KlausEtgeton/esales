@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 9, 2015 8:59:31 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.esales.model.PessoaFisica" table="pessoa_fisica" catalog="esales" optimistic-lock="version">
+        <id name="pessoaId" type="java.lang.Integer">
+            <column name="pessoa_id" />
+            <generator class="foreign">
+                <param name="property">pessoa</param>
+            </generator>
+        </id>
+        <one-to-one name="pessoa" class="com.esales.model.Pessoa" constrained="true"></one-to-one>
+        <property name="cpf" type="string">
+            <column name="cpf" length="45" />
+        </property>
+        <property name="dataNascimento" type="string">
+            <column name="data_nascimento" length="45" />
+        </property>
+        <property name="sexo" type="string">
+            <column name="sexo" length="45" />
+        </property>
+    </class>
+</hibernate-mapping>

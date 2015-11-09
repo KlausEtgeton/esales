@@ -3,7 +3,7 @@
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <!-- Generated Nov 9, 2015 8:59:31 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-    <class name="com.esales.model.Cidade" table="cidade" catalog="esales" optimistic-lock="version">
+    <class name="com.esales.model.Marca" table="marca" catalog="esales" optimistic-lock="version">
         <id name="id" type="int">
             <column name="id" />
             <generator class="assigned" />
@@ -11,11 +11,11 @@
         <property name="descricao" type="string">
             <column name="descricao" length="45" />
         </property>
-        <set name="pessoas" table="pessoa" inverse="true" lazy="true" fetch="select">
+        <set name="produtos" table="produto" inverse="true" lazy="true" fetch="select">
             <key>
-                <column name="cidade_id" not-null="true" />
+                <column name="marca_id" not-null="true" />
             </key>
-            <one-to-many class="com.esales.model.Pessoa" />
+            <one-to-many class="com.esales.model.Produto" />
         </set>
     </class>
 </hibernate-mapping>

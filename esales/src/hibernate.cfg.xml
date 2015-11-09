@@ -4,35 +4,30 @@
   <session-factory>
     <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
     <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/fazenda?zeroDateTimeBehavior=convertToNull</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/esales?zeroDateTimeBehavior=convertToNull</property>
     <property name="hibernate.connection.username">root</property>
     <property name="hibernate.connection.password">root</property>
-    <!--<property name="hibernate.hbm2ddl.auto" value="create"/>-->
-    <!--         Permite operacoes ddls pelo jpa 
-        <property name="hibernate.hbm2ddl.auto" value="update" />
- 
-         configuracao do Envers 
-        <property name="post-insert" value="org.hibernate.ejb.event.EJB3PostInsertEventListener, org.hibernate.envers.event.EnversListener" />
-        <property name="post-update" value="org.hibernate.ejb.event.EJB3PostUpdateEventListener, org.hibernate.envers.event.EnversListener" />-->
-    <mapping resource="com/esales/model/Usuario.hbm.xml"/>
-    <mapping resource="com/esales/model/Estado.hbm.xml"/>
-    <mapping resource="com/esales/model/GrauSangue.hbm.xml"/>
-    <mapping resource="com/esales/model/PropriedadeRural.hbm.xml"/>
-    <mapping resource="com/esales/model/Pais.hbm.xml"/>
-    <mapping resource="com/esales/model/Fotos.hbm.xml"/>
-    <mapping resource="com/esales/model/Categoria.hbm.xml"/>
+    <mapping resource="com/esales/model/SystemProgram.hbm.xml"/>
+    <mapping resource="com/esales/model/Filial.hbm.xml"/>
+    <mapping resource="com/esales/model/SystemUserProgram.hbm.xml"/>
+    <mapping resource="com/esales/model/Saida.hbm.xml"/>
+    <mapping resource="com/esales/model/SystemUser.hbm.xml"/>
+    <mapping resource="com/esales/model/Marca.hbm.xml"/>
+    <mapping resource="com/esales/model/PessoaJuridica.hbm.xml"/>
+    <mapping resource="com/esales/model/Entrada.hbm.xml"/>
+    <mapping resource="com/esales/model/Venda.hbm.xml"/>
+    <mapping resource="com/esales/model/Pessoa.hbm.xml"/>
+    <mapping resource="com/esales/model/ProdutoFilial.hbm.xml"/>
     <mapping resource="com/esales/model/Cidade.hbm.xml"/>
-    <mapping resource="com/esales/model/ProducaoLeite.hbm.xml"/>
-    <mapping resource="com/esales/model/VacinaAnimal.hbm.xml"/>
-    <mapping resource="com/esales/model/Vacina.hbm.xml"/>
-    <mapping resource="com/esales/model/Raca.hbm.xml"/>
-    <mapping resource="com/esales/model/Animal.hbm.xml"/>
-    <mapping resource="com/esales/model/UsuarioTipo.hbm.xml"/>
-    <!--        <listener class="org.hibernate.envers.event.AuditEventListener" type="post-insert"/>   
-        <listener class="org.hibernate.envers.event.AuditEventListener" type="post-update"/>   
-        <listener class="org.hibernate.envers.event.AuditEventListener" type="post-delete"/>   
-        <listener class="org.hibernate.envers.event.AuditEventListener" type="pre-collection-update"/>   
-        <listener class="org.hibernate.envers.event.AuditEventListener" type="pre-collection-remove"/>   
-        <listener class="org.hibernate.envers.event.AuditEventListener" type="post-collection-recreate"/>-->
+    <mapping resource="com/esales/model/Produto.hbm.xml"/>
+    <mapping resource="com/esales/model/SystemUserGroup.hbm.xml"/>
+    <mapping resource="com/esales/model/CompraItem.hbm.xml"/>
+    <mapping resource="com/esales/model/VendaItem.hbm.xml"/>
+    <mapping resource="com/esales/model/SystemGroup.hbm.xml"/>
+    <mapping resource="com/esales/model/Caixa.hbm.xml"/>
+    <mapping resource="com/esales/model/Compra.hbm.xml"/>
+    <mapping resource="com/esales/model/PessoaFisica.hbm.xml"/>
+    <mapping resource="com/esales/model/SystemGroupProgram.hbm.xml"/>
+    <mapping resource="com/esales/model/Log.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>
