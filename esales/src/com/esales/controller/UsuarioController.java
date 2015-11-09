@@ -5,6 +5,7 @@
  */
 package com.esales.controller;
 
+import com.esales.model.Filial;
 import com.esales.model.SystemUser;
 import com.esales.model.ModelDAO;
 //import com.esales.model.UsuarioTipo;
@@ -24,7 +25,7 @@ public final class UsuarioController extends AbstractTableModel {
     //Table model
     private ArrayList<SystemUser> lstUsuario = null;
     private SystemUser usuariot = null;
-    private String[] column = {"Código", "Descrição", "Tipo", "Descrição"};
+    private String[] column = {"Id", "Name", "Login", "Email"};
 
     /*
      * Método construtor da classe
@@ -52,15 +53,17 @@ public final class UsuarioController extends AbstractTableModel {
 //            JOptionPane.showMessageDialog(null, "Tamanho máximo do campo foi atingido, verifique!", "Verifique", JOptionPane.INFORMATION_MESSAGE);
 //            return false;
 //        } else {
-//            String msg = objModel.insert(obj);
-//            if (!msg.equals("")) {
-//                JOptionPane.showMessageDialog(null, msg, "Erro", JOptionPane.ERROR_MESSAGE);
-//                return false;
-//            } else {
-//                return true;
-//            }
+            
+//            obj.setFilial(new Filial(1));
+            String msg = objModel.insert(obj);
+            if (!msg.equals("")) {
+                JOptionPane.showMessageDialog(null, msg, "Erro", JOptionPane.ERROR_MESSAGE);
+                return false;
+            } else {
+                return true;
+            }
 //        }
-        return true;
+//        return true;
     }
     
     public Boolean update(SystemUser obj) {
@@ -71,15 +74,15 @@ public final class UsuarioController extends AbstractTableModel {
 //            JOptionPane.showMessageDialog(null, "Tamanho máximo do campo foi atingido, verifique!", "Verifique", JOptionPane.INFORMATION_MESSAGE);
 //            return false;
 //        } else {
-//            String msg = objModel.update(obj);
-//            if (!msg.equals("")) {
-//                JOptionPane.showMessageDialog(null, msg, "Erro", JOptionPane.ERROR_MESSAGE);
-//                return false;
-//            } else {
-//                return true;
-//            }
+            String msg = objModel.update(obj);
+            if (!msg.equals("")) {
+                JOptionPane.showMessageDialog(null, msg, "Erro", JOptionPane.ERROR_MESSAGE);
+                return false;
+            } else {
+                return true;
+            }
 //        }
-        return true;
+//        return true;
     }
     
     public Boolean delete(SystemUser obj) {        
@@ -135,23 +138,19 @@ public final class UsuarioController extends AbstractTableModel {
         Object value = null;        
         
         final SystemUser c = (SystemUser)lstUsuario.get(linhaIndex);  
-//        final UsuarioTipo ut = c.getUsuarioTipo();
         
         switch (colunaIndex) {            
             case 0:                
                 value = c.getId();
                 break;            
             case 1:                
-//                value = c.getUsuario();                
+                value = c.getName();
                 break;          
             case 2:
-//                value = ut.getId();
+                value = c.getLogin();    
                 break; 
             case 3:
-                //UsuarioTipo objTipo = new UsuarioTipoModel().findById(ut.getId());
-                //value = objTipo.getDescricao();
-                //Pode ser usado direto conforme linha abaixo
-//                value = new UsuarioTipoModel().findById(ut.getId()).getDescricao();
+                value = c.getEmail();
                 break; 
             default:  
                 return null;  

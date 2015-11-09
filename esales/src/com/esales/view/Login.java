@@ -27,6 +27,9 @@ public class Login extends javax.swing.JFrame {
     public Login() {
 
         initComponents();
+        
+        txtUsuario.setText("klaus");
+          jPSenha.setText("klaus");
 
         //Inicia o objeto de controller
         objController = new UsuarioController();
@@ -85,6 +88,12 @@ public class Login extends javax.swing.JFrame {
         jLabel1.setText("Usuário");
 
         jLabel2.setText("Senha");
+
+        txtUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtUsuarioActionPerformed(evt);
+            }
+        });
 
         jPSenha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -183,6 +192,10 @@ public class Login extends javax.swing.JFrame {
     private void jPSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPSenhaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jPSenhaActionPerformed
+
+    private void txtUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtUsuarioActionPerformed
 
     /**
      * @param args the command line arguments

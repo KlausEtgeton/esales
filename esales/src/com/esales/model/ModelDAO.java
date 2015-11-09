@@ -86,7 +86,7 @@ public class ModelDAO {
 
         try {
             //Cria QUERY para excluir o registro
-            Query query = objSession.createQuery("delete Usuario where id = :id");
+            Query query = objSession.createQuery("delete SystemUser where id = :id");
             //Seta os parâmetros
             query.setParameter("id", obj.getId());
             //Executa a QUERY
@@ -112,7 +112,7 @@ public class ModelDAO {
         Session objSession = this.objSessionFactory.openSession();
 
         try {
-            Query objQuery = objSession.createQuery("from Usuario");
+            Query objQuery = objSession.createQuery("from SystemUser");
             lstUsuario = (ArrayList<SystemUser>) objQuery.list();
         } catch (ObjectNotFoundException e) {
             return null;
@@ -145,7 +145,7 @@ public class ModelDAO {
         Session objSession = this.objSessionFactory.openSession();
 
         try {
-            Query objQuery = objSession.createQuery("from Usuario where usuario like '%" + descricao + "%'");
+            Query objQuery = objSession.createQuery("from SystemUser where name like '%" + descricao + "%'");
             lstUsuario = (ArrayList<SystemUser>) objQuery.list();
         } catch (ObjectNotFoundException e) {
             return null;
